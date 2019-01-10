@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Form, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,38 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  doAction : string;
+  actions : string[];
+  bodyParts : string[];
+
+  constructor() {
+    this.actions = [
+      "foo","bar","baz"
+    ];
+    this.bodyParts = [
+      "arm","knee","elbow"
+    ];
+
+  }
+
+  addAction(x : string) {
+    if(x) {
+      this.actions.push(x);
+    }
+  }
+
+  addBodyPart(x : string) {
+    if(x) {
+      this.bodyParts.push(x);
+    }
+  }
+
+  randomNum(array : string[]) {
+      return Math.floor(Math.random() * array.length)
+  }
+
+  randomAction(x : number, y : number) {
+    this.doAction = this.actions[this.randomNum(this.actions)] + " " + this.bodyParts[this.randomNum(this.bodyParts)];
+  }
+
 }
