@@ -13,7 +13,7 @@ export class AppComponent {
 
   constructor() {
     this.actions = [
-      "foo","bar","baz"
+      "bite","sniff","lick"
     ];
     this.bodyParts = [
       "arm","knee","elbow"
